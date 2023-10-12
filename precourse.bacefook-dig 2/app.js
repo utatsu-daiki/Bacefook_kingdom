@@ -29,7 +29,12 @@ function postView(containerEl){
       } else if(key == "feeling"){
         const ele = document.createElement("div");
         ele.className = key;
-        ele.innerText = emotion[post[key]];
+        if(emotion[post[key]]== undefined){
+          console.log(post[key]);
+          ele.innerText = post[key];
+        } else {
+          ele.innerText = emotion[post[key]];
+        }
         newsfeed.append(ele);
       }  else {
         const ele = document.createElement("div");
@@ -40,6 +45,7 @@ function postView(containerEl){
     }
     containerEl.append(newsfeed);
   }
+  console.log(newsfeed)
 }
 
 function displayPost(){
@@ -53,24 +59,25 @@ function showAddPost(){
   const newsfeed = document.querySelector("#newsfeed");
   newsfeed.style.marginTop = "375px";
   postForm.classList.remove("hide");
+  
+
 }
 
 function addPost(){
-  const inputData = document.getElementsByTagName("input");
+  // const feeling = document.getElementsByTagName("feeling_emoji");
+  const feeling = document.getElementsByTagName("select");
   const postText = document.getElementsByTagName("textarea"); 
   const postForm = document.querySelector(".form");
   const newsfeed = document.querySelector("#newsfeed");
-  
   let user = localStorage.getItem("username");
-  const result = {};
   
+  const result = {};
   result.friend = user;
   result.text = postText[0].value;
-  result.feeling = inputData[0].value;
+  result.feeling = feeling[0].value;
   result.timestamp = new Date();
   
   bacefook.newsfeed.push(result);
-  console.log(bacefook.newsfeed);
   
   postForm.classList.add("hide");
   newsfeed.style.marginTop = "200px";
