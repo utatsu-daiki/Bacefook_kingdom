@@ -1,50 +1,116 @@
 body {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     text-align: center;
     margin-top: 0;
 }
 h1 {
-    /* position: fixed; */
+    position: fixed;
+    top: 0;
     width:100%;
-    height: 60px;
-    background:#333;
-    color:#fff;
+    height:8%;
+    font-size: 5rem;
+    background:#040404;
+    color:#716f6f;
     margin-top: 0;
     padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: cursive;
 } 
 
 .button {
-    margin-top: auto;
+    margin-top: auto; 
+
     /* position: sticky; */
 }
 
 #newsfeed {
-    margin-top: 0;
+    margin-top: 30%;
     width: 100%;
 }
 
 .feed {
-    background-color:lightcyan;
-    margin-top: 15px;
+    background-color:rgb(104, 110, 110);
+    color: #2d2828;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 30px;
     padding: 5px;
     border-color: #333;
     border: 10px;
     padding: 10px;
-    /* display: flex; */
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px;
+    -webkit-border-bottom-right-radius: 50px;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    width: 100%;
+}
+
+.friend{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    font-size: 2rem;
+}
+
+.feeling{
+    grid-column-end: 3;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.timestamp{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.text{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+img{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: auto;
+    width: 50%;
 }
 
 .hide {
     display: none;
 }
 
-.test{
-    margin-top: 0;
+.form{
     position: fixed;
+    top:0px;
     width: 100%;
-    background-color: black;
+    /* background-color:black; */
+    /* padding-top: 100px; */
 }
 
 html{
     margin-top: 0;
+    padding: 0;
+    background-color: #333;
+    /* max-height: 844px;
+    max-width: 390px; */
+}
+
+.username {
+    padding-top: 100px;;
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    font-size: 3rem;
+    color: #8f8686;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }

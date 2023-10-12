@@ -1,13 +1,22 @@
 
 
+const emotion = {
+  "happy":"😄",
+  "smug":"😎",
+  "lovestruck":"😭",
+  "gross":"🤮",
+  "scared":"😱",
+  "tired":"🥱",
+  "angry":"😤",
+  "frustrated":"😩",
+  "excited":"🤩",
+}
 function postView(containerEl){
   for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
     const post = bacefook.newsfeed[index];
-
     const newsfeed = document.createElement("div");
     newsfeed.className = "feed";
     for (const key in post){
-
       if (key == "image"){
         const imgEl = document.createElement("img");
         imgEl.src = post.image["src"];
@@ -18,7 +27,12 @@ function postView(containerEl){
         ele.className = key;
         ele.innerText = moment(post[key]).calendar();
         newsfeed.append(ele);
-      } else {
+      } else if(key == "feeling"){
+        const ele = document.createElement("div");
+        ele.className = key;
+        ele.innerText = emotion[post[key]];
+        newsfeed.append(ele);
+      }  else {
         const ele = document.createElement("div");
         ele.className = key;
         ele.innerText = post[key];
@@ -29,6 +43,12 @@ function postView(containerEl){
   }
 }
 
+
+
+
+
+
+
 function displayPost(){
   const containerEl = document.querySelector("#newsfeed");
   containerEl.innerHTML="";
@@ -36,26 +56,32 @@ function displayPost(){
 }
 
 function showAddPost(){
-  console.log("hehe");
-  const postForm = document.querySelector("#newPost");
+  const postForm = document.querySelector(".form");
+  const username = document.querySelector(".username");
+  username.style.paddingTop = "275px";
   postForm.classList.remove("hide");
 }
 
 function addPost(){
   const inputData = document.getElementsByTagName("input");
   const postText = document.getElementsByTagName("textarea"); 
-
+  const postForm = document.querySelector(".form");
+  const username = document.querySelector(".username");
+  
+  let user = localStorage.getItem("username");
   const result = {};
-  result.friend = inputData[0].value;
+  
+  result.friend = user;
   result.text = postText[0].value;
-  result.feeling = inputData[1].value;
+  result.feeling = inputData[0].value;
   result.timestamp = new Date();
-
+  
   bacefook.newsfeed.push(result);
   console.log(bacefook.newsfeed);
-
-  const postForm = document.querySelector("#newPost");
+  
   postForm.classList.add("hide");
+  username.style.paddingTop = "100px";
+  displayPost();
 
 }
 
@@ -90,6 +116,10 @@ window.addEventListener("load", () => {
     username = window.prompt("What is your name?");
     localStorage.setItem("username", username);
   }
+  const namePlate = document.createElement("div");
+  namePlate.className = "username";
+  namePlate.innerText = username;
+  h1.after(namePlate);
 
   postView(containerEl);
 
