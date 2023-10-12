@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DIG Bacefook Newsfeed</title>
+    <script src="dataGenerator.js"></script>
+    <script src="app.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class = "test">
+    <h1>Bacefook Newsfeed</h1>
+    <div id="newPost" class="hide">
+    </div>
+      <div class="container">
+        <div class="head">
+          <h2>New Post</h2>
+        </div>
+        <input type="text" name="name" placeholder="Name" /><br />
+        <textarea type="text" name="message" placeholder="Message"></textarea><br />
+        <input  type="text" name="feeling" placeholder="Feeling" /><br />
+        <div class="button">
+          <button id="submit">
+            Post!
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="newsfeed"></div>
+  </body>
+</html>
