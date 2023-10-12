@@ -3,30 +3,63 @@ body {
     margin-right: auto; */
     text-align: center;
     margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 h1 {
     position: fixed;
     top: 0;
     width:100%;
-    height:8%;
+    height:12%;
     font-size: 5rem;
     background:#040404;
     color:#716f6f;
     margin-top: 0;
-    padding-top: 30px;
+    /* padding-top: 30px; */
     padding-bottom: 30px;
     font-family: cursive;
 } 
 
 .button {
-    margin-top: auto; 
+    width :100%; 
+    background-color: #2d2828;
+    padding: 1px;
+    color:rgb(113, 113, 113);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
 
+    
+}
+.button:hover {
+    width :100%; 
+    background-color: #b8adad;
+    padding: 1px;
+    color:#040404;
+    margin-top: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
     /* position: sticky; */
+    
+}
+
+
+.buttonContainer {
+    width:100%;
+    position: fixed;
+    top:133px;
+    /* margin-top: 150px; */
+    display: flex;
+    /* justify-content: space-around; */ 
+    background-color: #040404;
 }
 
 #newsfeed {
-    margin-top: 30%;
     width: 100%;
+    margin-top: 180px;
 }
 
 .feed {
@@ -38,7 +71,7 @@ h1 {
     border-color: #333;
     border: 10px;
     padding: 10px;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     margin-right: 10%;
     border: 1px;
     -webkit-border-bottom-right-radius: 50px;
@@ -74,6 +107,7 @@ h1 {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
+    font-size: 1.2rem;
 }
 img{
     grid-column-start: 1;
@@ -82,6 +116,7 @@ img{
     grid-row-end: 4;
     margin: auto;
     width: 50%;
+    margin-top: 5%;
 }
 
 .hide {
@@ -89,15 +124,29 @@ img{
 }
 
 .form{
+    padding-top: 30px;
     position: fixed;
-    top:0px;
+    top:157px;
+    padding-bottom: 15px;
     width: 100%;
-    /* background-color:black; */
+    background-color:black;
     /* padding-top: 100px; */
 }
 
+#submit {
+    margin-top: 30px;
+}
+textarea{
+    width:350px;
+    height:50px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: beige;
+}
 html{
     margin-top: 0;
+    margin-right: 12px;
+    margin-left: 0;
     padding: 0;
     background-color: #333;
     /* max-height: 844px;
@@ -105,10 +154,10 @@ html{
 }
 
 .username {
-    padding-top: 100px;;
+    padding-top: 0px;
     position: fixed;
     right: 10px;
-    top: 100px;
+    top: 90px;
     font-size: 3rem;
     color: #8f8686;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

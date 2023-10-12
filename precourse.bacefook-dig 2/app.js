@@ -1,5 +1,3 @@
-
-
 const emotion = {
   "happy":"😄",
   "smug":"😎",
@@ -11,6 +9,7 @@ const emotion = {
   "frustrated":"😩",
   "excited":"🤩",
 }
+
 function postView(containerEl){
   for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
     const post = bacefook.newsfeed[index];
@@ -43,12 +42,6 @@ function postView(containerEl){
   }
 }
 
-
-
-
-
-
-
 function displayPost(){
   const containerEl = document.querySelector("#newsfeed");
   containerEl.innerHTML="";
@@ -57,8 +50,8 @@ function displayPost(){
 
 function showAddPost(){
   const postForm = document.querySelector(".form");
-  const username = document.querySelector(".username");
-  username.style.paddingTop = "275px";
+  const newsfeed = document.querySelector("#newsfeed");
+  newsfeed.style.marginTop = "375px";
   postForm.classList.remove("hide");
 }
 
@@ -66,7 +59,7 @@ function addPost(){
   const inputData = document.getElementsByTagName("input");
   const postText = document.getElementsByTagName("textarea"); 
   const postForm = document.querySelector(".form");
-  const username = document.querySelector(".username");
+  const newsfeed = document.querySelector("#newsfeed");
   
   let user = localStorage.getItem("username");
   const result = {};
@@ -80,7 +73,7 @@ function addPost(){
   console.log(bacefook.newsfeed);
   
   postForm.classList.add("hide");
-  username.style.paddingTop = "100px";
+  newsfeed.style.marginTop = "200px";
   displayPost();
 
 }
@@ -88,22 +81,23 @@ function addPost(){
 window.addEventListener("load", () => {
   const containerEl = document.querySelector("#newsfeed");
   const h1 = document.querySelector("h1");
+  const buttons = document.createElement("div");
+  buttons.className = "buttonContainer";
+
 
   const divRefreshButton = document.createElement("div");
-  const refreshButton = document.createElement('button');
-  refreshButton.textContent = 'Refresh!';
+  divRefreshButton.innerText = 'Refresh';
   divRefreshButton.className = "button";
-  divRefreshButton.append(refreshButton);
-  h1.after(divRefreshButton);
-  refreshButton.addEventListener('click', displayPost);
+  buttons.append(divRefreshButton);
+  divRefreshButton.addEventListener('click', displayPost);
   
   const showDivPostButton = document.createElement("div");
-  const showPostButton = document.createElement('button');
-  showPostButton.textContent = 'Show Post!';
+  showDivPostButton.innerText = 'Add Post';
   showDivPostButton.className = "button";
-  showDivPostButton.append(showPostButton);
-  h1.after(showDivPostButton);
-  showPostButton.addEventListener('click', showAddPost);
+  buttons.append(showDivPostButton);
+  showDivPostButton.addEventListener('click', showAddPost);
+
+  h1.after(buttons);
  
   const postButton = document.querySelector("#submit");
   postButton.addEventListener("click",addPost);

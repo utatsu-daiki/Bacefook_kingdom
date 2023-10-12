@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIG Bacefook Newsfeed</title>
     <script src="dataGenerator.js"></script>
     <script src="app.js"></script>
@@ -8,18 +11,16 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Bacefook Newsfeed</h1>
-    <div class = "form hide">
-    <div id="newPost">
-      <div class="container">
-        <textarea type="text" name="message" placeholder="Message"></textarea><br />
-        <input  type="text" name="feeling" placeholder="Feeling" /><br />
-        <div class="button">
-          <button id="submit">
-            Post!
-          </button>
+    <h1>Bacefook</h1>
+    <div class = "form hide" style="margin: auto;">
+      <div id="newPost">
+        <div class="container">
+          <textarea type="text" name="message" placeholder="Message"></textarea><br />
+          <input  type="text" name="feeling" placeholder="Feeling" /><br />
+          <div class="button" id="submit" style="margin:auto;width:50%;margin-top: 15px;">
+            Post
+          </div>
         </div>
-      </div>
       </div>
     </div>
     <div id="newsfeed"></div>

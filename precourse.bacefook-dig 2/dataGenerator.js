@@ -128,7 +128,7 @@
       "alt":"test1"
     },
     {
-      "src":"./images/test2.jpg",
+      "src":"./images/test2.jpeg",
       "alt":"test2"
     },
     {
@@ -148,7 +148,7 @@
       "alt":"test6"
     },
     {
-      "src":"./images/test7.webp",
+      "src":"./images/test7.jpeg",
       "alt":"test7"
     },
     {
