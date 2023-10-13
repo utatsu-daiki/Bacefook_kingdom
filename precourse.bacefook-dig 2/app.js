@@ -82,6 +82,7 @@ function addPost(){
   postForm.classList.add("hide");
   newsfeed.style.marginTop = "200px";
   displayPost();
+  window.scrollTo(0,0);
 
 }
 
